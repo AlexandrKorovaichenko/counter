@@ -1,0 +1,63 @@
+.App {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  font-size: 20px;
+}
+
+.board {
+  background-color: aqua;
+}
+
+.button {
+  color: blue;
+  display: inline-block;
+  margin: 2px;
+}
+
+.inputError {
+  border: 1px solid red;
+  opacity: 0.6;
+  background-color: red
+}
+
+.counterError{
+  font-weight: bold;
+  color: red
+}
+
+.counter{
+  background-color: #eec5c5;
+}
+
+.counter .button{
+  display: inline-block;
+}
+
+.setting{
+  background-color: #c0d0ff;
+}
+
+.setting span{
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+.setting .messageUser{color: green;}
+
+.setting .messageUserError{
+  color: red;
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+.setting, .counter{
+  position: relative;
+  top: 100px;
+  width: 270px;
+  margin: 0 auto;
+  padding: 15px;
+  height: 110px;
+}
+
+
