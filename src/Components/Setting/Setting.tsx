@@ -21,11 +21,11 @@ const Setting = (props: SettingPropsType) => {
     // ++ для Минимума
     const onChangeMinHundler = (event: ChangeEvent<HTMLInputElement>) => {    
         const min = Number(event.currentTarget.value); 
-        if(min > maxLocalState) { console.log(1); props.showMessageUser(messageFromUser(3)); return;}
-        if(min < -1) { console.log(2); props.showMessageUser(messageFromUser(2)); return;}
-        if(min === -1) { console.log(3); props.showMessageUser(messageFromUser(2)); setMin(min); return;}
-        if(min === maxLocalState) { console.log(4); props.showMessageUser(messageFromUser(3)); setMin(min); return;} 
-        if(min < maxLocalState) { console.log(5); props.showMessageUser(messageFromUser(1)); setMin(min); return; }
+        if(min > maxLocalState)   { props.showMessageUser(messageFromUser(3)); return; }
+        if(min < -1)    { props.showMessageUser(messageFromUser(2)); return; }
+        if(min === -1)  { props.showMessageUser(messageFromUser(2)); setMin(min); return; }
+        if(min === maxLocalState) { props.showMessageUser(messageFromUser(3)); setMin(min); return; } 
+        if(min < maxLocalState)   { props.showMessageUser(messageFromUser(1)); setMin(min); return; }
     }
     // -- для Минимума
 
@@ -33,8 +33,11 @@ const Setting = (props: SettingPropsType) => {
     // ++ для Максимума
     const onChangeMaxHundler = (event: ChangeEvent<HTMLInputElement>) => {
         const max = Number(event.currentTarget.value);
+        console.log("max: " + max);
+        console.log("minLocalState: " + minLocalState);
+        console.log("maxLocalState: " + maxLocalState);
         if(max > minLocalState && minLocalState >= 0){ props.showMessageUser( messageFromUser(1) ); setMax(max); return; }
-        if(max === minLocalState) {props.showMessageUser( messageFromUser(3)); setMax(max); return; }
+        if(max === minLocalState && minLocalState !== -1) {props.showMessageUser( messageFromUser(3)); setMax(max); return; }
     }
     // -- для Максимума
 
